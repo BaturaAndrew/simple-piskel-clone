@@ -1,0 +1,89 @@
+@import "base/typography";
+@import "base/conteiner-flex";
+
+@import "abstracts/variables";
+
+@import "components/buttons";
+@import "components/header";
+@import "components/canvas";
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wrap {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background: rgb(120, 124, 128);
+  align-items: normal;
+  min-height: 100%;
+  justify-content: flex-start;
+
+  .header {
+    padding: 0 0 0 50px;
+    justify-content: space-between;
+  }
+
+  .main {
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .error {
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    position: fixed;
+
+    h2 {
+      font-size: 50px;
+      color: rgb(57, 20, 100);
+    }
+
+    p {
+      margin-top: 50px;
+      font-size: 30px;
+      color: rgb(100, 20, 73);
+    }
+  }
+
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #999;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #666;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(50, 50, 50, 0.4);
+}

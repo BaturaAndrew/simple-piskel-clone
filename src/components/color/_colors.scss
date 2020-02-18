@@ -1,0 +1,27 @@
+.colors {
+  margin-top: 50px;
+  width: 60px;
+}
+
+%color-input {
+  padding: 0;
+  height: 40px;
+  width: 40px;
+}
+
+.curr-color__item {
+  @extend %color-input;
+  z-index: 10;
+}
+
+.prev-color__item {
+  @extend %color-input;
+  position: relative;
+  top: -20px;
+  left: 20px;
+}
+
+.curr-color__item:hover,
+.prev-color__item:hover {
+  border: 2px solid rgb(41, 40, 40);
+}

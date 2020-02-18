@@ -1,0 +1,137 @@
+.frames {
+  display: block;
+  width: 150px;
+  position: relative;
+  height: 500px;
+  box-sizing: border-box;
+  padding-right: 10px;
+  padding-left: 10px;
+  overflow-y: auto;
+
+  &__block {
+    position: absolute;
+    left: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+    margin: 5px 0;
+    width: 100px;
+    height: 100px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABlBMVEVMTExVVVUnhsEkAAAAHUlEQVR4AWOAAUYoQOePEAUj3v9oYDQ9gMBoegAAJFwCAbLaTIMAAAAASUVORK5CYII=') repeat;
+
+    &:hover {
+      cursor: pointer;
+      border: 2px solid grey;
+    }
+
+    &.selected:after {
+      content: "";
+      position: relative;
+      top: -62px;
+      right: -99px;
+      border: transparent 4px solid;
+      border-left-color: gold;
+      border-width: 10px 1px 10px 6px;
+      border-style: solid;
+    }
+
+    .tile-overlay {
+      z-index: 10;
+      position: relative;
+      background-color: rgba(100, 100, 100, 0.6);
+      opacity: 1;
+      height: 30px;
+      width: 28px;
+      border: none;
+    }
+
+    .delete-frame.visible,
+    .duplicate-frame.visible {
+      visibility: visible;
+    }
+
+    .delete-frame {
+      border: 1px solid grey;
+      visibility: hidden;
+      top: -95px;
+      right: -67px;
+      border-bottom-left-radius: 3px;
+      cursor: pointer;
+    }
+
+    .delete-frame:hover {
+      border: 1px solid rgb(206, 195, 131);
+    }
+
+    .duplicate-frame {
+      border: 1px solid grey;
+      visibility: hidden;
+      top: -40px;
+      right: -38px;
+      border-bottom-left-radius: 3px;
+      cursor: pointer;
+    }
+
+    .duplicate-frame:hover {
+      border: 1px solid rgb(206, 195, 131);
+    }
+
+    .icon-frame-recyclebin {
+      background-image: url(../../../assets/images/icons.png?20181125);
+      background-position: -274px -106px;
+    }
+
+    .icon-frame-duplicate {
+      background-image: url(../../../assets/images/icons.png?20181125);
+      background-position: -274px -76px;
+    }
+  }
+
+  .frames__canvas {
+    width: 100px;
+    height: 100px;
+  }
+
+  .active {
+    border: 4px solid gold;
+  }
+
+  .add-frame {
+    position: absolute;
+    left: 5px;
+    top: 150px;
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    padding: 6px 0;
+    overflow: hidden;
+    width: 96px;
+    border: #888 solid 3px;
+    border-radius: 4px;
+    color: #888;
+    background-color: #222;
+    font-size: 13px;
+    cursor: pointer;
+
+    &-icon {
+      margin: 3px;
+      float: left;
+      flex-shrink: 0;
+    }
+
+    .icon-frame-plus-white {
+      background-image: url(../../../assets/images/icons.png?20181125);
+      background-position: -274px -157px;
+      width: 26px;
+      height: 26px;
+    }
+
+    &__text {
+      overflow: hidden;
+      text-align: left;
+    }
+
+    &:hover {
+      border-color: gold;
+    }
+  }
+}

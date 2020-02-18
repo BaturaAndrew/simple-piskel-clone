@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Simple Piskel Clone</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+	<link rel="shortcut icon" type="image/png" href="assets/images/app-icons-300x172_32x32.png">
+
+	<script src="https://kit.fontawesome.com/0578106aca.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="src/lib/GIFEncoder.js"></script>
+	<script type="text/javascript" src="src/lib/canvas2apng.js"> </script>
+	<script type="text/javascript" src="src/lib/LZWEncoder.js"></script>
+	<script type="text/javascript" src="src/lib/NeuQuant.js"></script>
+</head>
+
+<body>
+	<div class="wrap flex-column">
+		<header class="header flex-row">
+
+			<a class="link anchor-left  piskel-logo" href="/">
+				<img src="assets/images/logo_transparent_small_compact.png">
+				<h1 class="logo__text">Simple Piskel Clone</h1>
+			</a>
+
+			<h2 class="header__text">
+				New Piskel
+			</h2>
+
+			<div class="navigation">
+				<a class="landing button-type1" href="/src/landing/landing.html">
+					Landing
+				</a>
+
+				<a class="login button-type1" href="#">
+					Login
+				</a>
+			</div>
+
+		</header>
+
+		<main class="main flex-row">
+			<div class="panel flex-row">
+
+				<div class="tools flex-column">
+
+					<div class="pen-size-container">
+						<div class="pen-size__option selected" data-size="1"></div>
+						<div class="pen-size__option" data-size="2"></div>
+						<div class="pen-size__option" data-size="3"></div>
+						<div class="pen-size__option" data-size="4"></div>
+					</div>
+
+					<ul class="pallete flex-row">
+						<li class="tooltip paintBucket flex-row">
+							<i class="fa fa-fill-drip"></i>
+							<span class="tooltiptext leftArrow">paint bucket tool (B)</span>
+						</li>
+						<li class="tooltip colorPicker flex-row">
+							<i class="fa fa-eye-dropper"></i>
+							<span class="tooltiptext leftArrow">color picker tool (C)</span>
+						</li>
+						<li class="tooltip pencil flex-row">
+							<i class="fa fa-pencil"></i>
+							<span class="tooltiptext leftArrow">pencil tool (P)</span>
+						</li>
+						<li class="tooltip eraser flex-row">
+							<i class="fas fa-eraser"></i>
+							<span class="tooltiptext leftArrow">eraser tool (E)</span>
+						</li>
+						<li class="tooltip stroke flex-row">
+							<i class="fas fa-pen-alt"></i>
+							<span class="tooltiptext leftArrow">stroke pencil tool (S)</span>
+						</li>
+					</ul>
+
+					<div class="colors">
+						<input class="curr-color__item" type="color" value="#ff0000" tabindex="-1">
+						<input class="prev-color__item" type="color" value="#ff0000" tabindex="-1">
+					</div>
+
+				</div>
+
+				<div class="frames flex-column">
+					<div id="add-frame" class="add-frame" data-tile-action="newframe">
+						<div class="add-frame-icon icon-frame-plus-white"></div>
+						<div class="add-frame__text">Add new frame</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="canvas-control-block flex-column">
+				<div class="canvas">
+					<canvas id="canvas" width="512" height="512"></canvas>
+				</div>
+
+			</div>
+
+			<div class="preview">
+
+				<div class="preview__block">
+					<canvas class="preview__canvas" width="150" height="150"></canvas>
+				</div>
+
+				<div class="fps flex-row">
+					<span class="fps-display">0 FPS</span>
+					<input class="fps-range" type="range" min="0" max="25" value="0">
+				</div>
+
+				<ul class="canvas-size flex-row">
+					<a class="canvas-size__value active">32</a>
+					<a class="canvas-size__value">64</a>
+					<a class="canvas-size__value">128</a>
+				</ul>
+
+				<div class="export flex-row">
+					<a href="" class="export-gif flex-column">
+						<div class="tool-icon  icon-settings-export-white" rel="tooltip" data-placement="left">
+						</div>
+						.gif
+					</a>
+					<a href="" class="export-apng flex-column">
+						<div class="tool-icon icon-settings-export-white" rel="tooltip" data-placement="left">
+						</div>
+						.apng
+					</a>
+				</div>
+
+				<canvas class="apng-canvas" width="150" height="150" style="display: none;"></canvas>
+
+			</div>
+
+		</main>
+
+	</div>
+
+</body>
+
+</html>

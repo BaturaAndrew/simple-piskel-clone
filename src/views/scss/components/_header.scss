@@ -1,0 +1,26 @@
+.header {
+  background: #2D2D2D;
+  height: 48px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24), 0px 0px 4px rgba(0, 0, 0, 0.12);
+  justify-content: space-between;
+
+  .piskel-logo>img {
+    height: 24px;
+  }
+
+  &__text {
+
+    color: white;
+    font-family: $ysv;
+    font-size: 18px;
+  }
+
+  .logo__text {
+    display: none;
+  }
+
+  .navigation {
+    margin-right: 50px;
+  }
+
+}
