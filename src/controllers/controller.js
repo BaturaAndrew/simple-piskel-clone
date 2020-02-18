@@ -29,7 +29,6 @@ import getFps from '../helpers/getFps';
 import {
   canvasEl,
   addFrameButtonEl,
-  // firstFrames,
   saveImgToGif,
   saveImgToApng,
   rngFps,

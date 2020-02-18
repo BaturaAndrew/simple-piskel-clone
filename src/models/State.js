@@ -23,7 +23,6 @@ export default class State {
 
   saveCanvas(dimension) {
     this.state.dimension = dimension;
-    this.state.img = this.canvas.toDataURL();
     localStorage.setItem('state', JSON.stringify(this.state));
     return true;
   }
@@ -46,18 +45,17 @@ export default class State {
 
   initialState() {
     this.state = {
-      currСolor: 'green',
-      prevСolor: '',
+      currСolor: '#00FF00',
+      prevСolor: '#FF0000',
     };
-    this.state.img = '';
-    this.state.dimension = 512;
+    this.state.dimension = 128;
     this.state.tool = 'pencil';
     return this.state;
   }
 
   applySavedState() {
     const img = new Image();
-    img.src = this.state.img;
+    img.src = '';
     const context = this.canvas.getContext('2d');
     this.canvas.width = this.state.dimension;
     this.canvas.height = this.state.dimension;

@@ -61,11 +61,11 @@ function addFrame(controlCanvas, controlState) {
   });
 
   // REPLACE FRAMES
-  frame.addEventListener('mousedown', (e) => {
-    document.body.style.cursor = 'move';
+  // frame.addEventListener('mousedown', (e) => {
+  //   document.body.style.cursor = 'move';
 
-    moveFigure(frame, e);
-  });
+  //   moveFigure(frame, e);
+  // });
 
 
   frame.childNodes[0].classList.add('active');
@@ -125,54 +125,54 @@ function printImageToNewFrame(oldFrame) {
   };
 }
 
-function moveFigure(figure, event) {
-  const fames = document.querySelector('.frames');
-  const coords = getCoords(figure);
-  const famesCoords = getCoords(fames);
-  // const shiftX = event.pageX - coords.left;
-  const shiftY = event.pageY - coords.top;
-  const framesShiftY = event.pageY - famesCoords.top;
+// function moveFigure(figure, event) {
+//   const fames = document.querySelector('.frames');
+//   const coords = getCoords(figure);
+//   const famesCoords = getCoords(fames);
+//   // const shiftX = event.pageX - coords.left;
+//   const shiftY = event.pageY - coords.top;
+//   const framesShiftY = event.pageY - famesCoords.top;
 
-  figure.style.position = 'absolute';
-  figure.style.zIndex = 1000;
-  // figure.style.left = '117px';
-  // figure.style.top = '150px';
+//   figure.style.position = 'absolute';
+//   figure.style.zIndex = 1000;
+//   // figure.style.left = '117px';
+//   // figure.style.top = '150px';
 
-  // document.body.appendChild(figure);
-  fames.appendChild(figure);
+//   // document.body.appendChild(figure);
+//   fames.appendChild(figure);
 
-  moveAt(event);
+//   moveAt(event);
 
-  /* eslint-disable no-shadow */
-  document.onmousemove = function (event) {
-    moveAt(event);
-  };
+//   /* eslint-disable no-shadow */
+//   document.onmousemove = function (event) {
+//     moveAt(event);
+//   };
 
-  figure.onmouseup = function () {
-    // figure.style.position = 'relative';
-    // figure.style.top = framesShiftY + shiftY;
+//   figure.onmouseup = function () {
+//     // figure.style.position = 'relative';
+//     // figure.style.top = framesShiftY + shiftY;
 
-    document.onmousemove = null;
-    figure.onmouseup = null;
-  };
+//     document.onmousemove = null;
+//     figure.onmouseup = null;
+//   };
 
-  // browser has its own Drag’n’Drop - switch it off
-  figure.ondragstart = function () {
-    return false;
-  };
+//   // browser has its own Drag’n’Drop - switch it off
+//   figure.ondragstart = function () {
+//     return false;
+//   };
 
-  function moveAt(e) {
-    figure.style.top = `${e.pageY - framesShiftY - shiftY}px`;
-  }
+//   function moveAt(e) {
+//     figure.style.top = `${e.pageY - framesShiftY - shiftY}px`;
+//   }
 
-  function getCoords(elem) {
-    const box = elem.getBoundingClientRect();
-    return {
-      top: box.top + pageYOffset,
-      left: box.left + pageXOffset,
-    };
-  }
-}
+//   function getCoords(elem) {
+//     const box = elem.getBoundingClientRect();
+//     return {
+//       top: box.top + pageYOffset,
+//       left: box.left + pageXOffset,
+//     };
+//   }
+// }
 
 export {
   printImageOnFrame,

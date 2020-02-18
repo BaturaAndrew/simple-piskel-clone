@@ -9,8 +9,6 @@
   overflow-y: auto;
 
   &__block {
-    position: absolute;
-    left: 5px;
     border: 2px solid rgba(0, 0, 0, 0.7);
     box-sizing: border-box;
     margin: 5px 0;
@@ -96,9 +94,6 @@
   }
 
   .add-frame {
-    position: absolute;
-    left: 5px;
-    top: 150px;
     display: flex;
     align-items: center;
     margin-top: 8px;
