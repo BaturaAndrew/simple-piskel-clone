@@ -13,6 +13,7 @@ const eraserEl = document.querySelector('.eraser');
 // colors
 const currColorEl = document.querySelector('.curr-color__item');
 const prevColorEl = document.querySelector('.prev-color__item');
+const swapColorsEl = document.querySelector('.swap-colors-button');
 // frames
 let framesEl = document.querySelectorAll('frames__block');
 framesEl = Array.prototype.slice.call(framesEl);
@@ -42,6 +43,7 @@ module.exports = {
   pencilEl,
   currColorEl,
   prevColorEl,
+  swapColorsEl,
   addFrameButtonEl,
   framesEl,
   eraserEl,

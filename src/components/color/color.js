@@ -3,6 +3,7 @@ import './_colors.scss';
 import {
   currColorEl,
   prevColorEl,
+  swapColorsEl,
   canvasEl,
 } from '../constants';
 
@@ -11,15 +12,17 @@ import getColorFromCanvas from '../../helpers/getColor';
 
 export default function handlerColor(controlCanvas, controlState) {
   currColorEl.addEventListener('input', (e) => {
-    controlState.state.currСolor = e.target.value;
-    controlCanvas.currСolor = controlState.state.currСolor;
-    refreshColor(e.target.value);
+    const currColor = e.target.value;
+    refreshColor(currColor);
   }, false);
 
   prevColorEl.addEventListener('input', (e) => {
-    controlState.state.currСolor = e.target.value;
-    controlCanvas.currСolor = controlState.state.currСolor;
-    refreshColor(e.target.value);
+    const currColor = e.target.value;
+    refreshColor(currColor);
+  }, false);
+
+  swapColorsEl.addEventListener('click', () => {
+    refreshColor(controlState.state.prevСolor);
   }, false);
 
   canvasEl.addEventListener('mousedown', (e) => {
@@ -31,7 +34,7 @@ export default function handlerColor(controlCanvas, controlState) {
   });
 
   function refreshColor(crColor) {
-    const prColor = currColorEl.value;
+    const prColor = controlState.state.currСolor;
     // change color if it is not same with current color
     if (crColor !== controlState.state.currСolor) {
       controlState.state.prevСolor = prColor;

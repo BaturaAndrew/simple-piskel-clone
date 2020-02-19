@@ -9,6 +9,8 @@
   overflow-y: auto;
 
   &__block {
+    position: relative;
+    left: 5px;
     border: 2px solid rgba(0, 0, 0, 0.7);
     box-sizing: border-box;
     margin: 5px 0;
@@ -82,6 +84,11 @@
       background-image: url(../../../assets/images/icons.png?20181125);
       background-position: -274px -76px;
     }
+
+  }
+
+  .over {
+    border: 2px dashed greenyellow;
   }
 
   .frames__canvas {

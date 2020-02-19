@@ -25,3 +25,19 @@
 .prev-color__item:hover {
   border: 2px solid rgb(41, 40, 40);
 }
+
+.icon-swapcolors{
+  background-image: url(../../../assets/images/icons.png?20181125);
+  background-position: -274px -222px;
+  width: 18px;
+  height: 18px;
+}
+.swap-colors-button {
+  position: relative;
+  top: -35px;
+  opacity: 0.3;
+  cursor: pointer;
+}
+.swap-colors-button:hover {
+  opacity: 1;
+}

@@ -15,6 +15,8 @@ import {
   canvasEl,
 } from './components/constants';
 
+import './helpers/authentification';
+
 const controlState = new State(canvasEl);
 loadColors(controlState);
 loadCanvasSize(controlState.state.dimension);
